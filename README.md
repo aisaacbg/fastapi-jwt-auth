@@ -71,7 +71,6 @@ The application relies on environment variables to configure certain parameters.
     ALGORITHM: The algorithm used for encoding the JWT (e.g., HS256).
     ACCESS_TOKEN_EXPIRE_MINUTES: Token expiration time in minutes.
     DATABASE_URL: The URL for the main SQLite database (e.g., sqlite:///./app.db).
-    TEST_DATABASE_URL: The URL for the test SQLite database (e.g., sqlite:///./test.db).
 
 Setting Up the .env File
 
