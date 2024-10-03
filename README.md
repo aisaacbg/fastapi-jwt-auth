@@ -25,8 +25,7 @@ To run this project locally, you need to have the following installed:
 
 bash
 
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
+    git clone https://github.com/aisaacbg/fastapi-jwt-auth.git
 
 ### 2. Build and Run the Docker Container
 
@@ -34,7 +33,7 @@ To build and run the application inside a Docker container, use:
 
 bash
 
-docker-compose up --build
+    docker-compose up --build
 
 The application will be available at http://0.0.0.0:8000/.
 ### 3. Access the API Documentation
@@ -53,7 +52,8 @@ To run the tests, execute the following command:
 
 bash
 
-docker-compose exec app pytest
+    docker-compose exec app pytest
+
 
 This will run the test suite inside the Docker container and display the results.
 
@@ -61,7 +61,7 @@ Alternatively, if you prefer to run the tests without entering the container:
 
 bash
 
-docker-compose run app pytest
+    docker-compose run app pytest
 
 ### 5. Application Database Configuration
 
