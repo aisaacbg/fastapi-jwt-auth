@@ -34,7 +34,7 @@ To build and run the application inside a Docker container, use:
 
 bash
 
-docker-compose up --build
+    docker-compose up --build
 
 The application will be available at http://0.0.0.0:8000/.
 ### 3. Access the API Documentation
