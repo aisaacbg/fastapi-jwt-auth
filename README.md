@@ -1,9 +1,9 @@
-FastAPI JWT Authentication Microservice
+# FastAPI JWT Authentication Microservice
 
 This FastAPI-based microservice provides JWT-based authentication for user registration, login, token verification, and refresh. The application uses two SQLite databases: one for the application endpoints and another for running tests.
 Features
 
-    JWT Authentication: Secure authentication with access and refresh tokens.
+    ## JWT Authentication: Secure authentication with access and refresh tokens.
     Endpoints:
         /register: Register a new user.
         /login: Obtain access tokens.
@@ -11,22 +11,24 @@ Features
         /token/verify: Verify the validity of a token.
         /logout: Log out the user.
 
-Requirements
+## Requirements
 
 To run this project locally, you need to have the following installed:
 
     Docker
     Docker Compose
 
-How to Run the Application
-1. Clone the Repository
+## How to Run the Application
+
+
+### 1. Clone the Repository
 
 bash
 
 git clone https://github.com/your-username/your-repository.git
 cd your-repository
 
-2. Build and Run the Docker Container
+### 2. Build and Run the Docker Container
 
 To build and run the application inside a Docker container, use:
 
@@ -35,7 +37,7 @@ bash
 docker-compose up --build
 
 The application will be available at http://0.0.0.0:8000/.
-3. Access the API Documentation
+### 3. Access the API Documentation
 
 You can view the auto-generated API documentation by FastAPI at:
 
@@ -43,7 +45,7 @@ You can view the auto-generated API documentation by FastAPI at:
     ReDoc: http://0.0.0.0:8000/redoc
 
 These endpoints provide interactive API documentation where you can test the different endpoints.
-4. Running Tests
+### 4. Running Tests
 
 This project uses a separate SQLite database for testing, isolated from the main database used by the application endpoints.
 
@@ -61,7 +63,7 @@ bash
 
 docker-compose run app pytest
 
-5. Application Database Configuration
+### 5. Application Database Configuration
 
 The application uses two SQLite databases:
 
@@ -79,4 +81,24 @@ The application relies on environment variables to configure certain parameters.
     DATABASE_URL: The URL for the main SQLite database (e.g., sqlite:///./app.db).
     TEST_DATABASE_URL: The URL for the test SQLite database (e.g., sqlite:///./test.db).
 
-Make sure to set up your .env file correctly before running the project.
+### 6. Environment Variables
+
+The application relies on environment variables to configure certain parameters. These are defined in the .env file. Here are the important variables:
+
+    SECRET_KEY: The key used for JWT encoding/decoding.
+    ALGORITHM: The algorithm used for encoding the JWT (e.g., HS256).
+    ACCESS_TOKEN_EXPIRE_MINUTES: Token expiration time in minutes.
+    DATABASE_URL: The URL for the main SQLite database (e.g., sqlite:///./app.db).
+    TEST_DATABASE_URL: The URL for the test SQLite database (e.g., sqlite:///./test.db).
+
+Setting Up the .env File
+
+Make sure to set up your .env file correctly before running the project. Here is an example of what your .env file might look like:
+
+makefile
+
+SECRET_KEY=your_secret_key
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+DATABASE_URL=sqlite:///./app.db
+TEST_DATABASE_URL=sqlite:///./test.db
