@@ -1,15 +1,21 @@
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
+from app.config import settings
+import os
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./database.db"
+# Verifica si los tests están corriendo
+is_testing = os.getenv("PYTEST_CURRENT_TEST") is not None
 
-# Config Engine
+# Usa la base de datos de pruebas si está corriendo pytest
+if is_testing:
+    SQLALCHEMY_DATABASE_URL = settings.TEST_SQLALCHEMY_DATABASE_URL
+else:
+    SQLALCHEMY_DATABASE_URL = settings.SQLALCHEMY_DATABASE_URL
+
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
 )
 
-# Session database
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
