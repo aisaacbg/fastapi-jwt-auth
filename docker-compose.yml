@@ -6,6 +6,6 @@ services:
     volumes:
       - .:/app
     environment:
-      - DATABASE_URL=sqlite:///./app.db   # URL de la base de datos para los endpoints
-      - TEST_DATABASE_URL=sqlite:///./test.db   # URL de la base de datos para pruebas
+      - DATABASE_URL=sqlite:///./app.db   # URL database for endpoints
+      - TEST_DATABASE_URL=sqlite:///./test.db   # URL database fot tests
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
