@@ -4,8 +4,8 @@ from datetime import datetime, timedelta
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
-from .config import settings
-from . import models, database
+from ..config import settings
+from .. import models, database
 
 # Load the variables from the .env file
 SECRET_KEY = settings.SECRET_KEY
