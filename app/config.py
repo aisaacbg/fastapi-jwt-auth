@@ -14,6 +14,6 @@ class Settings:
     SQLALCHEMY_DATABASE_URL: str = os.getenv("DATABASE_URL")
 
     # Separate database for tests
-    TEST_SQLALCHEMY_DATABASE_URL: str = os.getenv("TEST_DATABASE_URL")
+    TEST_SQLALCHEMY_DATABASE_URL: str = "sqlite:///:memory:"
 
 settings = Settings()
