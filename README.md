@@ -63,25 +63,7 @@ bash
 
     docker-compose run app pytest
 
-### 5. Application Database Configuration
-
-The application uses two SQLite databases:
-
-    Main Database (app.db): This database is used for storing user data and handling requests to the application's endpoints.
-    Test Database (test.db): This database is used exclusively during testing to isolate test data from production data.
-
-The database connections are automatically managed by the application based on whether it's running tests or serving endpoints.
-Environment Variables
-
-The application relies on environment variables to configure certain parameters. These are defined in the .env file. Here are the important variables:
-
-    SECRET_KEY: The key used for JWT encoding/decoding.
-    ALGORITHM: The algorithm used for encoding the JWT (e.g., HS256).
-    ACCESS_TOKEN_EXPIRE_MINUTES: Token expiration time in minutes.
-    DATABASE_URL: The URL for the main SQLite database (e.g., sqlite:///./app.db).
-    TEST_DATABASE_URL: The URL for the test SQLite database (e.g., sqlite:///./test.db).
-
-### 6. Environment Variables
+### 5. Environment Variables
 
 The application relies on environment variables to configure certain parameters. These are defined in the .env file. Here are the important variables:
 
@@ -101,4 +83,3 @@ SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 DATABASE_URL=sqlite:///./app.db
-TEST_DATABASE_URL=sqlite:///./test.db
