@@ -25,7 +25,7 @@ To run this project locally, you need to have the following installed:
 
 bash
 
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/aisaacbg/fastapi-jwt-auth.git
 cd your-repository
 
 ### 2. Build and Run the Docker Container
