@@ -1,6 +1,6 @@
 # FastAPI JWT Authentication Microservice
 
-This FastAPI-based microservice provides JWT-based authentication for user registration, login, token verification, and refresh. The application uses two SQLite databases: one for the application endpoints and another for running tests.
+This FastAPI-based microservice provides JWT-based authentication for user registration, login, token verification, and refresh.
 Features
 
     ## JWT Authentication: Secure authentication with access and refresh tokens.
